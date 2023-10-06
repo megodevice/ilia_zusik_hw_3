@@ -23,7 +23,27 @@ public class Main {
 
         // ----------------------------------------------------- //
 
+        //printArrayElemetsSum(array);
+        double d = 0.0;
+        int index = 0;
         for (int i = 0; i < array.length; i++) {
+            System.out.println(Arrays.toString(array));
+            d = array[i];
+            index = i;
+            for (int j = i; j < array.length; j++) {
+                if (d > array[j]) {
+                    d = array[j];
+                    index = j;
+                }
+            }
+            array[index] = array[i];
+            array[i] = d;
+        }
+        //printArrayElemetsSum(array);
+
+        // ----------------------------------------------------- //
+
+        /*for (int i = 0; i < array.length; i++) {
             double d = array[i];
             System.out.println(Arrays.toString(array));
             for (int j = i; j < array.length; j++) {
@@ -33,7 +53,15 @@ public class Main {
                     array[i] = d;
                 }
             }
+        }*/
+    }
+
+    public static void printArrayElemetsSum(double[] array) {
+        double d = 0.0;
+        for (double v : array) {
+            d += v;
         }
+        System.out.println(d);
     }
 
 }
